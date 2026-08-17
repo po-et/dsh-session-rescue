@@ -1,0 +1,45 @@
+{
+  "name": "dsh-session-rescue",
+  "version": "0.1.0",
+  "description": "Diagnose, repair and salvage corrupted DeepSeek Harness (dsh) session logs — seq gaps, torn writes, broken headers. Zero dependencies.",
+  "type": "module",
+  "bin": {
+    "dsh-session-rescue": "lib/cli.js"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "README.zh.md"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/po-et/dsh-session-rescue.git"
+  },
+  "homepage": "https://github.com/po-et/dsh-session-rescue#readme",
+  "bugs": {
+    "url": "https://github.com/po-et/dsh-session-rescue/issues"
+  },
+  "engines": {
+    "node": ">=22.15"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test tests/*.test.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "session",
+    "repair",
+    "recovery",
+    "rescue"
+  ],
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "typescript": "^5.6.0"
+  }
+}
