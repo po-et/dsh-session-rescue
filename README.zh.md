@@ -5,7 +5,7 @@
 [English](README.md)
 
 ```sh
-npx dsh-session-rescue
+npx github:po-et/dsh-session-rescue
 ```
 
 如果你见过这些报错，这个工具就是为你写的：
@@ -19,28 +19,30 @@ dsh 的会话日志是 append-only 且严格校验的：崩溃恢复或第二个
 
 ## 快速开始
 
+> `npx github:…` 首次运行会从源码构建（约半分钟），之后有缓存。发布到 npm 后也可以用更短的 `npx dsh-session-rescue`。
+
 ```sh
 # 1. 看哪些会话坏了（只读，绝对安全）
-npx dsh-session-rescue
+npx github:po-et/dsh-session-rescue
 
 # 2. 深度诊断某个会话（路径或 id 片段均可）
-npx dsh-session-rescue doctor 37374e34
+npx github:po-et/dsh-session-rescue doctor 37374e34
 
 # 3. 预览修复方案——此时不写任何东西
-npx dsh-session-rescue repair 37374e34
+npx github:po-et/dsh-session-rescue repair 37374e34
 
 # 4. 执行修复（自动保留带时间戳的备份；请先关闭 dsh）
-npx dsh-session-rescue repair 37374e34 --apply
+npx github:po-et/dsh-session-rescue repair 37374e34 --apply
 ```
 
 修不了的也能救回对话内容：
 
 ```sh
-npx dsh-session-rescue export 37374e34        # 抢救对话全文为 Markdown
-npx dsh-session-rescue quarantine 37374e34    # 把坏会话移出 dsh 视野，防止拖垮启动
+npx github:po-et/dsh-session-rescue export 37374e34        # 抢救对话全文为 Markdown
+npx github:po-et/dsh-session-rescue quarantine 37374e34    # 把坏会话移出 dsh 视野，防止拖垮启动
 ```
 
-在用 AI agent？直接对它说：**"运行 `npx dsh-session-rescue`，把我损坏的 dsh 会话修好。"**
+在用 AI agent？直接对它说：**"运行 `npx github:po-et/dsh-session-rescue`，把我损坏的 dsh 会话修好。"**
 
 ## 能修什么
 

@@ -5,7 +5,7 @@
 [中文文档](README.zh.md)
 
 ```sh
-npx dsh-session-rescue
+npx github:po-et/dsh-session-rescue
 ```
 
 If dsh greets you with any of these, this tool is for you:
@@ -19,28 +19,30 @@ dsh session logs are append-only and strictly validated: one duplicated write af
 
 ## Quick start
 
+> `npx github:…` builds from source on first run (about half a minute); later runs are cached. Once the package is on npm the shorter `npx dsh-session-rescue` will work too.
+
 ```sh
 # 1. See which sessions are broken (safe, read-only)
-npx dsh-session-rescue
+npx github:po-et/dsh-session-rescue
 
 # 2. Deep-diagnose one session (path or any unique id fragment)
-npx dsh-session-rescue doctor 37374e34
+npx github:po-et/dsh-session-rescue doctor 37374e34
 
 # 3. Preview the repair — nothing is written yet
-npx dsh-session-rescue repair 37374e34
+npx github:po-et/dsh-session-rescue repair 37374e34
 
 # 4. Apply it (a timestamped backup is always kept; close dsh first)
-npx dsh-session-rescue repair 37374e34 --apply
+npx github:po-et/dsh-session-rescue repair 37374e34 --apply
 ```
 
 Can't be repaired? Get your conversation back anyway:
 
 ```sh
-npx dsh-session-rescue export 37374e34        # salvages the transcript to Markdown
-npx dsh-session-rescue quarantine 37374e34    # move a broken session out of dsh's sight
+npx github:po-et/dsh-session-rescue export 37374e34        # salvages the transcript to Markdown
+npx github:po-et/dsh-session-rescue quarantine 37374e34    # move a broken session out of dsh's sight
 ```
 
-Using an AI agent? Just tell it: *"Run `npx dsh-session-rescue` and fix my broken dsh sessions."*
+Using an AI agent? Just tell it: *"Run `npx github:po-et/dsh-session-rescue` and fix my broken dsh sessions."*
 
 ## What it can fix
 
