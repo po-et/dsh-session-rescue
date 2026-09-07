@@ -54,6 +54,8 @@ Using an AI agent? Just tell it: *"Run `npx github:po-et/dsh-session-rescue` and
 | Unreadable/garbled header | manual edits, partial writes | header reconstruction |
 | Real seq holes (events actually missing) | forced compaction, lost writes | explicit `--truncate` keeps the loadable prefix; `export` salvages the rest |
 
+Both repair paths are pinned by regression tests modeled on the two corruption shapes reported in [deepseek-harness#1497](https://github.com/deepseek-ai/deepseek-harness/discussions/1497) (interrupt closers colliding with a resumed real tool result; a full tail rewritten from a recycled seq) — the tool's output matches the fixes those users validated by hand.
+
 ## Why it's safe
 
 Community experience shows naive repairs can *kill* a session permanently (dangling `sourceEventSeqs` poisoning). This tool:

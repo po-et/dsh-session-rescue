@@ -54,6 +54,8 @@ npx github:po-et/dsh-session-rescue quarantine 37374e34    # 把坏会话移出 
 | header 损坏 | 手工编辑、部分写入 | 重建 header |
 | 真实 seq 空洞（事件确实丢了） | 强制压缩、写入丢失 | 显式 `--truncate` 保住可加载前缀；`export` 抢救其余 |
 
+两条修复路径都有按实地报告建模的回归测试：[deepseek-harness#1497](https://github.com/deepseek-ai/deepseek-harness/discussions/1497) 里报告的两种损坏形态（中断收尾块与恢复后的真实工具结果撞号；从回收 seq 整尾重写），工具的输出与这些用户手工验证过的修法一致。
+
 ## 为什么安全
 
 社区案例证明：外行修复可能把会话**修死**（悬空 `sourceEventSeqs` 毒化，永久报废）。本工具：
