@@ -15,11 +15,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/im-Captain/dsh-session-rescue.git"
+    "url": "git+https://github.com/po-et/dsh-session-rescue.git"
   },
-  "homepage": "https://github.com/im-Captain/dsh-session-rescue#readme",
+  "homepage": "https://github.com/po-et/dsh-session-rescue#readme",
   "bugs": {
-    "url": "https://github.com/im-Captain/dsh-session-rescue/issues"
+    "url": "https://github.com/po-et/dsh-session-rescue/issues"
   },
   "engines": {
     "node": ">=22.15"
